@@ -5,18 +5,15 @@ import React, { useState } from 'react'
 
 function App() {
   const [hoverStyle, setHoverStyle] = useState('hidden')
-  console.log(hoverStyle, 'hover style on load')
 
-  const handleHoverStyle = () => {
-    console.log('handleHoverStyle')
-    setHoverStyle('')
-  }
+  const handleMouseOver = () => setHoverStyle('')
+  const handleMouseLeave = () => setHoverStyle('hidden')
 
   return (
     <div className="App">
       <header className="App-header">
-        <p onMouseOver={handleHoverStyle}>Hover</p>
-        <div className={hoverStyle} >
+        <p onMouseOver={handleMouseOver}>Hover</p>
+        <div className={hoverStyle} id='menu' onMouseLeave={handleMouseLeave}>
           <MenuList allLinks={links} />
         </div>
       </header>
