@@ -24,3 +24,13 @@
 .menu-item:hover {
   background-color: rgba(245, 245, 245, 0.616);
 }
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.76);
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
