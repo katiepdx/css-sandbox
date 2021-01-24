@@ -1,5 +1,5 @@
-import './App.css';
-import MenuList from './components/MenuList';
+import './App.scss';
+import MenuList from './components/menu/MenuList';
 import { links } from './data/links';
 import React, { useState } from 'react';
 
@@ -19,7 +19,14 @@ function App() {
         <div className={hoverStyle} id='menu' onMouseLeave={handleStyleChange}>
           <MenuList allLinks={links} />
         </div>
+
       </header>
+
+      {/* MODAL */}
+      <section className='modal'>
+        <button>Click to open modal</button>
+        <p>Modal content</p>
+      </section>
     </div>
   );
 };
