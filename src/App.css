@@ -1,25 +1,39 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-end;
+  padding-right: 3%;
+  font-size: 2rem;
   color: white;
 }
 
 #menu {
   position: absolute;
-  top: 0;
-  left: 50;
+  top: 10%;
+  right: .2;
   z-index: 1;
 
   background-color: rgb(15, 39, 59);
+}
+
+.menu-item:first-of-type:after {
+  content: '';
+
+  position: absolute;
+  top: -2%;
+  right: 0;
+  transform: rotate(-225deg);
+
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid whitesmoke;
 }
 
 .menu-item {

@@ -6,14 +6,17 @@ import React, { useState } from 'react'
 function App() {
   const [hoverStyle, setHoverStyle] = useState('hidden')
 
-  const handleMouseOver = () => setHoverStyle('')
-  const handleMouseLeave = () => setHoverStyle('hidden')
+  const handleStyleChange = () => (
+    hoverStyle === 'hidden'
+      ? setHoverStyle('')
+      : setHoverStyle('hidden')
+  )
 
   return (
     <div className="App">
       <header className="App-header">
-        <p onMouseOver={handleMouseOver}>Hover</p>
-        <div className={hoverStyle} id='menu' onMouseLeave={handleMouseLeave}>
+        <p onMouseOver={handleStyleChange} className='links'>Links</p>
+        <div className={hoverStyle} id='menu' onMouseLeave={handleStyleChange}>
           <MenuList allLinks={links} />
         </div>
       </header>
