@@ -1,16 +1,16 @@
 import './App.css';
 import MenuList from './components/MenuList';
-import { links } from './data/links'
-import React, { useState } from 'react'
+import { links } from './data/links';
+import React, { useState } from 'react';
 
 function App() {
-  const [hoverStyle, setHoverStyle] = useState('hidden')
+  const [hoverStyle, setHoverStyle] = useState('hidden');
 
   const handleStyleChange = () => (
     hoverStyle === 'hidden'
       ? setHoverStyle('')
       : setHoverStyle('hidden')
-  )
+  );
 
   return (
     <div className="App">
@@ -22,6 +22,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
