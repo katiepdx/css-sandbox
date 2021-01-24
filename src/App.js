@@ -5,12 +5,25 @@ import React, { useState } from 'react';
 
 function App() {
   const [hoverStyle, setHoverStyle] = useState('hidden');
+  const [modalOpenStyles, setModalOpenStyles] = useState('');
+  const [modalExitStyles, setModalExitStyles] = useState('hidden');
 
   const handleStyleChange = () => (
     hoverStyle === 'hidden'
       ? setHoverStyle('')
       : setHoverStyle('hidden')
   );
+
+  const handleModalOpenStyles = () => {
+    setModalOpenStyles('hidden')
+    setModalExitStyles('')
+  };
+
+  const handleModalExitStyles = () => {
+    setModalOpenStyles('')
+    setModalExitStyles('hidden')
+  }
+
 
   return (
     <div className="App">
@@ -24,8 +37,14 @@ function App() {
 
       {/* MODAL */}
       <section className='modal'>
-        <button>Click to open modal</button>
-        <p>Modal content</p>
+        <button onClick={handleModalOpenStyles} className={modalOpenStyles}>Click to open modal</button>
+
+        <section className={modalExitStyles}>
+          <p className='modal-content'>
+            <span className='modal-exit' onClick={handleModalExitStyles}>X</span>
+          Modal content
+          </p>
+        </section>
       </section>
     </div>
   );
