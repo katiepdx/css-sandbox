@@ -11,9 +11,11 @@ const Modal = ({
       <button onClick={handleModalOpenStyles} className={modalOpenStyles}>Click to open modal</button>
 
       <section className={modalExitStyles}>
-        <p className='modal-content'>
-          <span className='modal-exit' onClick={handleModalExitStyles}>X</span>
-          Modal content
+        <p className='modal-content-wrapper'>
+          <div className='modal-box'>
+            <div><span className='modal-exit' onClick={handleModalExitStyles}>X</span></div>
+            <p>Modal content</p>
+          </div>
         </p>
       </section>
     </>

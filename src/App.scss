@@ -55,43 +55,64 @@ a {
   font-weight: bold;
 }
 
-.hidden {
+.none {
   display: none;
+}
+.hidden {
+  visibility: hidden;
 }
 
 /* MODAL STYLES */
 .modal {
-  border: 2px solid black;
   margin: 0 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-self: center;
 
-  .modal-content {
+  .modal-content-wrapper {
     font-size: 1.2rem;
-    border: 2px solid black;
-    background-color: rgba(24, 9, 9, 0.342);
-    
-    height: 20vh;
-    width: 40vw;
+    background-color: rgb(129, 129, 129);
 
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
 
+    background-color: rgba(82, 82, 77, 0.308);
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .modal-exit {
-    background-color: red;
+  .modal-box {
+    background-color: rgb(105, 105, 129);
+    border: 2px solid rgb(204, 204, 204);
+    height: 20vh;
+    width: 40vw;
+    
+    display: grid;
+    grid-template-rows: 25px auto;
+
+    div {
+      width: 100%;
+      background-color: rgb(134, 134, 134);
+    }
+    .modal-exit {
+      background-color: rgb(134, 134, 134);
+    }
+    p {
+      text-align: center;
+    }
   }
 
   button {
     border: none;
     background-color: rgba(44, 42, 42, 0.178);
-
+    border: 2px solid black;
     padding: 2rem;
     font-size: 1.2rem;
   }
