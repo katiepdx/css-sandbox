@@ -2,6 +2,7 @@ import './App.scss';
 import MenuList from './components/menu/MenuList';
 import { links } from './data/links';
 import React, { useState } from 'react';
+import Modal from './components/modal/Modal';
 
 function App() {
   const [hoverStyle, setHoverStyle] = useState('hidden');
@@ -24,7 +25,6 @@ function App() {
     setModalExitStyles('hidden')
   }
 
-
   return (
     <div className="App">
       <header className="App-header">
@@ -37,14 +37,12 @@ function App() {
 
       {/* MODAL */}
       <section className='modal'>
-        <button onClick={handleModalOpenStyles} className={modalOpenStyles}>Click to open modal</button>
-
-        <section className={modalExitStyles}>
-          <p className='modal-content'>
-            <span className='modal-exit' onClick={handleModalExitStyles}>X</span>
-          Modal content
-          </p>
-        </section>
+        <Modal
+          modalOpenStyles={modalOpenStyles}
+          handleModalOpenStyles={handleModalOpenStyles}
+          modalExitStyles={modalExitStyles}
+          handleModalExitStyles={handleModalExitStyles}
+        />
       </section>
     </div>
   );
